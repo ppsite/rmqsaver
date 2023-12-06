@@ -54,5 +54,5 @@ fn main() {
             max_partition = partition;
         }
     }
-    println!("partition: {}, count: {}", max_partition, max_count);
+    println!("{}:{}", max_partition, max_count);
 }
