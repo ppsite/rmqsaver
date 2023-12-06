@@ -21,10 +21,6 @@ struct Args {
     /// rabbitmq password with admin permission
     #[arg(long)]
     password: String,
-
-    /// interval in seconds between two checks
-    #[arg(long, default_value_t = 3)]
-    interval: u8,
 }
 
 fn main() {
