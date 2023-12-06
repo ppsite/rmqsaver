@@ -1,4 +1,4 @@
-use log::{debug, error};
+use log::{debug, error, info};
 use regex::Regex;
 use reqwest::blocking::Client;
 use serde::Deserialize;
@@ -24,6 +24,7 @@ pub fn check_rabbitmq_node_health(
     match response {
         Ok(resp) => {
             let json_resp: NodeHealth = resp.json().unwrap();
+            info!("status: {:?}", json_resp.status);
             match json_resp.reason {
                 Some(reason) => {
                     // 正则表达式: 提取 [] 内的内容
